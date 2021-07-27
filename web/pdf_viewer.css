@@ -21,7 +21,7 @@
 .pdfViewer .page {
   position: relative;
   overflow: visible;
-  width: 100%;
+  width: 98% !important;
   height: 1056px;
   margin: 1px auto -8px auto;
   border: 2px solid transparent;
