@@ -23,12 +23,11 @@
   overflow: visible;
   width: 100%;
   height: 1056px;
-  /*margin: 1px auto -8px auto;*/
-  border-width: 0;
-  /*border-image: url(images/shadow.png) 9 9 repeat;*/
+  margin: 1px auto -8px auto;
+  border-image: url(images/shadow.png) 9 9 repeat;
   background-color: white;
   background-clip: content-box;
-  /*direction: ltr;*/
+  direction: ltr;
 }
 
 .pdfViewer .page canvas {
