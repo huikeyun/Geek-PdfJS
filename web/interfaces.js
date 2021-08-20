@@ -19,85 +19,67 @@
 /**
  * @interface
  */
-function IPDFLinkService() {
-}
-
+function IPDFLinkService() {}
 IPDFLinkService.prototype = {
-    /**
-     * @returns {number}
-     */
-    get page() {
-    },
-    /**
-     * @param {number} value
-     */
-    set page(value) {
-    },
-    /**
-     * @param dest - The PDF destination object.
-     */
-    navigateTo: function (dest) {
-    },
-    /**
-     * @param dest - The PDF destination object.
-     * @returns {string} The hyperlink to the PDF object.
-     */
-    getDestinationHash: function (dest) {
-    },
-    /**
-     * @param hash - The PDF parameters/hash.
-     * @returns {string} The hyperlink to the PDF object.
-     */
-    getAnchorUrl: function (hash) {
-    },
-    /**
-     * @param {string} hash
-     */
-    setHash: function (hash) {
-    },
-    /**
-     * @param {string} action
-     */
-    executeNamedAction: function (action) {
-    },
+  /**
+   * @returns {number}
+   */
+  get page() {},
+  /**
+   * @param {number} value
+   */
+  set page(value) {},
+  /**
+   * @param dest - The PDF destination object.
+   */
+  navigateTo: function (dest) {},
+  /**
+   * @param dest - The PDF destination object.
+   * @returns {string} The hyperlink to the PDF object.
+   */
+  getDestinationHash: function (dest) {},
+  /**
+   * @param hash - The PDF parameters/hash.
+   * @returns {string} The hyperlink to the PDF object.
+   */
+  getAnchorUrl: function (hash) {},
+  /**
+   * @param {string} hash
+   */
+  setHash: function (hash) {},
+  /**
+   * @param {string} action
+   */
+  executeNamedAction: function (action) {},
 };
 
 /**
  * @interface
  */
-function IRenderableView() {
-}
-
+function IRenderableView() {}
 IRenderableView.prototype = {
-    /**
-     * @returns {string} - Unique ID for rendering queue.
-     */
-    get renderingId() {
-    },
-    /**
-     * @returns {RenderingStates}
-     */
-    get renderingState() {
-    },
-    /**
-     * @param {function} callback - The draw completion callback.
-     */
-    draw: function (callback) {
-    },
-    resume: function () {
-    },
+  /**
+   * @returns {string} - Unique ID for rendering queue.
+   */
+  get renderingId() {},
+  /**
+   * @returns {RenderingStates}
+   */
+  get renderingState() {},
+  /**
+   * @param {function} callback - The draw completion callback.
+   */
+  draw: function (callback) {},
+  resume: function () {},
 };
 
 /**
  * @interface
  */
-function ILastScrollSource() {
-}
-
+function ILastScrollSource() {}
 ILastScrollSource.prototype = {
-    /**
-     * @returns {number}
-     */
-    get lastScroll() {
-    },
+  /**
+   * @returns {number}
+   */
+  get lastScroll() {},
 };

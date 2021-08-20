@@ -21,21 +21,21 @@
 ////Note: Keep in sync with extensions/chromium/preferences_schema.json !
 //#endif
 var DEFAULT_PREFERENCES = {
-    showPreviousViewOnLoad: true,
-    defaultZoomValue: '',
-    sidebarViewOnLoad: 0,
-    enableHandToolOnLoad: true,
-    enableWebGL: true,
-    pdfBugEnabled: true,
-    disableRange: true,
-    disableStream: true,
-    disableAutoFetch: true,
-    disableFontFace: true,
+  showPreviousViewOnLoad: true,
+  defaultZoomValue: '',
+  sidebarViewOnLoad: 0,
+  enableHandToolOnLoad: false,
+  enableWebGL: false,
+  pdfBugEnabled: false,
+  disableRange: false,
+  disableStream: false,
+  disableAutoFetch: false,
+  disableFontFace: false,
 //#if B2G
 //disableTextLayer: true,
 //useOnlyCssZoom: true
 //#else
-    disableTextLayer: true,
-    useOnlyCssZoom: true
+  disableTextLayer: false,
+  useOnlyCssZoom: false
 //#endif
 };

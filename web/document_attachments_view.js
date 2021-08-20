@@ -19,36 +19,36 @@
 'use strict';
 
 var DocumentAttachmentsView = function documentAttachmentsView(options) {
-    var attachments = options.attachments;
-    var attachmentsView = options.attachmentsView;
-    while (attachmentsView.firstChild) {
-        attachmentsView.removeChild(attachmentsView.firstChild);
-    }
+  var attachments = options.attachments;
+  var attachmentsView = options.attachmentsView;
+  while (attachmentsView.firstChild) {
+    attachmentsView.removeChild(attachmentsView.firstChild);
+  }
 
-    if (!attachments) {
-        return;
-    }
+  if (!attachments) {
+    return;
+  }
 
-    function bindItemLink(domObj, item) {
-        domObj.onclick = function documentAttachmentsViewOnclick(e) {
-            var downloadManager = new DownloadManager();
-            downloadManager.downloadData(item.content, getFileName(item.filename),
-                '');
-            return false;
-        };
-    }
+  function bindItemLink(domObj, item) {
+    domObj.onclick = function documentAttachmentsViewOnclick(e) {
+      var downloadManager = new DownloadManager();
+      downloadManager.downloadData(item.content, getFileName(item.filename),
+                                   '');
+      return false;
+    };
+  }
 
-    var names = Object.keys(attachments).sort(function (a, b) {
-        return a.toLowerCase().localeCompare(b.toLowerCase());
-    });
-    for (var i = 0, ii = names.length; i < ii; i++) {
-        var item = attachments[names[i]];
-        var div = document.createElement('div');
-        div.className = 'attachmentsItem';
-        var button = document.createElement('button');
-        bindItemLink(button, item);
-        button.textContent = getFileName(item.filename);
-        div.appendChild(button);
-        attachmentsView.appendChild(div);
-    }
+  var names = Object.keys(attachments).sort(function(a,b) {
+    return a.toLowerCase().localeCompare(b.toLowerCase());
+  });
+  for (var i = 0, ii = names.length; i < ii; i++) {
+    var item = attachments[names[i]];
+    var div = document.createElement('div');
+    div.className = 'attachmentsItem';
+    var button = document.createElement('button');
+    bindItemLink(button, item);
+    button.textContent = getFileName(item.filename);
+    div.appendChild(button);
+    attachmentsView.appendChild(div);
+  }
 };

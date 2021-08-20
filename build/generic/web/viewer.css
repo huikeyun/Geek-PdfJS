@@ -15,31 +15,31 @@
 
 .textLayer {
   position: absolute;
+  left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
   overflow: hidden;
 }
 
 .textLayer > div {
-  position: absolute;
-  cursor: text;
-  -moz-transform-origin: 0% 0%;
-  -ms-transform-origin: 0% 0%;
-  -o-transform-origin: 0% 0%;
-  -webkit-transform-origin: 0% 0%;
-  transform-origin: 0% 0%;
-  white-space: pre;
   color: transparent;
+  position: absolute;
+  white-space: pre;
+  cursor: text;
+  -webkit-transform-origin: 0% 0%;
+  -moz-transform-origin: 0% 0%;
+  -o-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
 }
 
 .textLayer .highlight {
   margin: -1px;
   padding: 1px;
 
-  border-radius: 4px;
   background-color: rgb(180, 0, 170);
+  border-radius: 4px;
 }
 
 .textLayer .highlight.begin {
@@ -63,37 +63,37 @@
 }
 
 .pdfViewer .page {
-  position: relative;
-  overflow: visible;
+  direction: ltr;
   width: 816px;
   height: 1056px;
   margin: 1px auto -8px auto;
+  position: relative;
+  overflow: visible;
   border: 9px solid transparent;
+  background-clip: content-box;
   border-image: url(images/shadow.png) 9 9 repeat;
   background-color: white;
-  background-clip: content-box;
-  direction: ltr;
 }
 
 .pdfViewer .page canvas {
-  display: block;
   margin: 0;
+  display: block;
 }
 
 .pdfViewer .page .loadingIcon {
   position: absolute;
+  display: block;
+  left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
-  display: block;
-  background: url("images/loading-icon.gif") center no-repeat;
+  background: url('images/loading-icon.gif') center no-repeat;
 }
 
 .pdfViewer .page .annotLink > a:hover {
   opacity: 0.2;
-  background: #ffff00;
-  box-shadow: 0px 2px 10px #ffff00;
+  background: #ff0;
+  box-shadow: 0px 2px 10px #ff0;
 }
 
 :-webkit-full-screen .pdfViewer .page {
@@ -118,7 +118,7 @@
 
 .pdfViewer .page .annotationHighlight {
   position: absolute;
-  border: 2px #ffff99 solid;
+  border: 2px #FFFF99 solid;
 }
 
 .pdfViewer .page .annotText > img {
@@ -135,17 +135,17 @@
   z-index: 200;
   float: left;
   max-width: 20em;
+  background-color: #FFFF99;
+  box-shadow: 0px 2px 5px #333;
+  border-radius: 2px;
   padding: 0.6em;
   cursor: pointer;
-  border-radius: 2px;
-  background-color: #ffff99;
-  box-shadow: 0px 2px 5px #333333;
 }
 
 .pdfViewer .page .annotTextContent > h1 {
   font-size: 1em;
-  padding-bottom: 0.2em;
   border-bottom: 1px solid #000000;
+  padding-bottom: 0.2em;
 }
 
 .pdfViewer .page .annotTextContent > p {
@@ -153,29 +153,28 @@
 }
 
 .pdfViewer .page .annotLink > a {
-  font-size: 1em;
   position: absolute;
+  font-size: 1em;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
 
-.pdfViewer .page .annotLink > a /* -ms-a */
-{
+.pdfViewer .page .annotLink > a /* -ms-a */  {
   background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAA\
                    LAAAAAABAAEAAAIBRAA7") 0 0 repeat;
 }
 
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 html {
-  font-size: 10px;
-  /* Font size is needed to make the activity bar the correct size. */
   height: 100%;
+  /* Font size is needed to make the activity bar the correct size. */
+  font-size: 10px;
 }
 
 body {
@@ -195,52 +194,51 @@ select {
 .hidden {
   display: none !important;
 }
-
 [hidden] {
   display: none !important;
 }
 
 #viewerContainer:-webkit-full-screen {
   top: 0px;
-  overflow: hidden;
+  border-top: 2px solid transparent;
+  background-color: #000;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   cursor: none;
-  border-top: 2px solid transparent;
-  background-color: #000000;
 }
 
 #viewerContainer:-moz-full-screen {
   top: 0px;
-  overflow: hidden;
+  border-top: 2px solid transparent;
+  background-color: #000;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   cursor: none;
-  border-top: 2px solid transparent;
-  background-color: #000000;
 }
 
 #viewerContainer:-ms-fullscreen {
   top: 0px !important;
-  overflow: hidden !important;
+  border-top: 2px solid transparent;
   width: 100%;
   height: 100%;
+  overflow: hidden !important;
   cursor: none;
-  border-top: 2px solid transparent;
 }
 
 #viewerContainer:-ms-fullscreen::-ms-backdrop {
-  background-color: #000000;
+  background-color: #000;
 }
 
 #viewerContainer:fullscreen {
   top: 0px;
-  overflow: hidden;
+  border-top: 2px solid transparent;
+  background-color: #000;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   cursor: none;
-  border-top: 2px solid transparent;
-  background-color: #000000;
 }
 
 :-webkit-full-screen a:not(.internalLink) {
@@ -278,76 +276,67 @@ select {
 
 /* outer/inner center provides horizontal center */
 .outerCenter {
-  position: relative;
   pointer-events: none;
-}
-
-html[dir="ltr"] .outerCenter {
-  right: 50%;
-  float: right;
-}
-
-html[dir="rtl"] .outerCenter {
-  left: 50%;
-  float: left;
-}
-
-.innerCenter {
   position: relative;
-  pointer-events: auto;
 }
-
-html[dir="ltr"] .innerCenter {
-  right: -50%;
+html[dir='ltr'] .outerCenter {
   float: right;
+  right: 50%;
 }
-
-html[dir="rtl"] .innerCenter {
-  left: -50%;
+html[dir='rtl'] .outerCenter {
   float: left;
+  left: 50%;
+}
+.innerCenter {
+  pointer-events: auto;
+  position: relative;
+}
+html[dir='ltr'] .innerCenter {
+  float: right;
+  right: -50%;
+}
+html[dir='rtl'] .innerCenter {
+  float: left;
+  left: -50%;
 }
 
 #outerContainer {
-  position: relative;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 #sidebarContainer {
   position: absolute;
   top: 0;
   bottom: 0;
-  visibility: hidden;
   width: 200px;
-  -webkit-transition-timing-function: ease;
-  transition-timing-function: ease;
+  visibility: hidden;
   -webkit-transition-duration: 200ms;
+  -webkit-transition-timing-function: ease;
   transition-duration: 200ms;
+  transition-timing-function: ease;
 
 }
-
-html[dir="ltr"] #sidebarContainer {
-  left: -200px;
+html[dir='ltr'] #sidebarContainer {
   -webkit-transition-property: left;
   transition-property: left;
+  left: -200px;
 }
-
-html[dir="rtl"] #sidebarContainer {
-  right: -200px;
+html[dir='rtl'] #sidebarContainer {
   -webkit-transition-property: right;
   transition-property: right;
+  right: -200px;
 }
 
 #outerContainer.sidebarMoving > #sidebarContainer,
 #outerContainer.sidebarOpen > #sidebarContainer {
   visibility: visible;
 }
-
-html[dir="ltr"] #outerContainer.sidebarOpen > #sidebarContainer {
+html[dir='ltr'] #outerContainer.sidebarOpen > #sidebarContainer {
   left: 0px;
 }
-
-html[dir="rtl"] #outerContainer.sidebarOpen > #sidebarContainer {
+html[dir='rtl'] #outerContainer.sidebarOpen > #sidebarContainer {
   right: 0px;
 }
 
@@ -358,68 +347,62 @@ html[dir="rtl"] #outerContainer.sidebarOpen > #sidebarContainer {
   bottom: 0;
   left: 0;
   min-width: 320px;
-  -webkit-transition-timing-function: ease;
-  transition-timing-function: ease;
   -webkit-transition-duration: 200ms;
+  -webkit-transition-timing-function: ease;
   transition-duration: 200ms;
+  transition-timing-function: ease;
 }
-
-html[dir="ltr"] #outerContainer.sidebarOpen > #mainContainer {
-  left: 200px;
+html[dir='ltr'] #outerContainer.sidebarOpen > #mainContainer {
   -webkit-transition-property: left;
   transition-property: left;
+  left: 200px;
 }
-
-html[dir="rtl"] #outerContainer.sidebarOpen > #mainContainer {
-  right: 200px;
+html[dir='rtl'] #outerContainer.sidebarOpen > #mainContainer {
   -webkit-transition-property: right;
   transition-property: right;
+  right: 200px;
 }
 
 #sidebarContent {
-  position: absolute;
   top: 32px;
   bottom: 0;
   overflow: auto;
-  width: 200px;
-  background-color: hsla(0, 0%, 0%, .1);
   -webkit-overflow-scrolling: touch;
+  position: absolute;
+  width: 200px;
+  background-color: hsla(0,0%,0%,.1);
 }
-
-html[dir="ltr"] #sidebarContent {
+html[dir='ltr'] #sidebarContent {
   left: 0;
-  box-shadow: inset -1px 0 0 hsla(0, 0%, 0%, .25);
+  box-shadow: inset -1px 0 0 hsla(0,0%,0%,.25);
 }
-
-html[dir="rtl"] #sidebarContent {
+html[dir='rtl'] #sidebarContent {
   right: 0;
-  box-shadow: inset 1px 0 0 hsla(0, 0%, 0%, .25);
+  box-shadow: inset 1px 0 0 hsla(0,0%,0%,.25);
 }
 
 #viewerContainer {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
   position: absolute;
   top: 32px;
   right: 0;
   bottom: 0;
   left: 0;
-  overflow: auto;
   outline: none;
-  -webkit-overflow-scrolling: touch;
 }
-
-html[dir="ltr"] #viewerContainer {
-  box-shadow: inset 1px 0 0 hsla(0, 0%, 100%, .05);
+html[dir='ltr'] #viewerContainer {
+  box-shadow: inset 1px 0 0 hsla(0,0%,100%,.05);
 }
-
-html[dir="rtl"] #viewerContainer {
-  box-shadow: inset -1px 0 0 hsla(0, 0%, 100%, .05);
+html[dir='rtl'] #viewerContainer {
+  box-shadow: inset -1px 0 0 hsla(0,0%,100%,.05);
 }
 
 .toolbar {
   position: relative;
-  z-index: 9999;
-  right: 0;
   left: 0;
+  right: 0;
+  z-index: 9999;
   cursor: default;
 }
 
@@ -432,21 +415,19 @@ html[dir="rtl"] #viewerContainer {
   height: 32px;
   background-color: #424242; /* fallback */
   background-image: url(images/texture.png),
-  linear-gradient(hsla(0, 0%, 30%, .99), hsla(0, 0%, 25%, .95));
+                    linear-gradient(hsla(0,0%,30%,.99), hsla(0,0%,25%,.95));
 }
-
-html[dir="ltr"] #toolbarSidebar {
+html[dir='ltr'] #toolbarSidebar {
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25),
-  inset 0 -1px 0 hsla(0, 0%, 100%, .05),
-  0 1px 0 hsla(0, 0%, 0%, .15),
-  0 0 1px hsla(0, 0%, 0%, .1);
+              inset 0 -1px 0 hsla(0,0%,100%,.05),
+              0 1px 0 hsla(0,0%,0%,.15),
+              0 0 1px hsla(0,0%,0%,.1);
 }
-
-html[dir="rtl"] #toolbarSidebar {
+html[dir='rtl'] #toolbarSidebar {
   box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.25),
-  inset 0 1px 0 hsla(0, 0%, 100%, .05),
-  0 1px 0 hsla(0, 0%, 0%, .15),
-  0 0 1px hsla(0, 0%, 0%, .1);
+              inset 0 1px 0 hsla(0,0%,100%,.05),
+              0 1px 0 hsla(0,0%,0%,.15),
+              0 0 1px hsla(0,0%,0%,.1);
 }
 
 #toolbarContainer, .findbar, .secondaryToolbar {
@@ -454,23 +435,21 @@ html[dir="rtl"] #toolbarSidebar {
   height: 32px;
   background-color: #474747; /* fallback */
   background-image: url(images/texture.png),
-  linear-gradient(hsla(0, 0%, 32%, .99), hsla(0, 0%, 27%, .95));
+                    linear-gradient(hsla(0,0%,32%,.99), hsla(0,0%,27%,.95));
 }
-
-html[dir="ltr"] #toolbarContainer, .findbar, .secondaryToolbar {
-  box-shadow: inset 1px 0 0 hsla(0, 0%, 100%, .08),
-  inset 0 1px 1px hsla(0, 0%, 0%, .15),
-  inset 0 -1px 0 hsla(0, 0%, 100%, .05),
-  0 1px 0 hsla(0, 0%, 0%, .15),
-  0 1px 1px hsla(0, 0%, 0%, .1);
+html[dir='ltr'] #toolbarContainer, .findbar, .secondaryToolbar {
+  box-shadow: inset 1px 0 0 hsla(0,0%,100%,.08),
+              inset 0 1px 1px hsla(0,0%,0%,.15),
+              inset 0 -1px 0 hsla(0,0%,100%,.05),
+              0 1px 0 hsla(0,0%,0%,.15),
+              0 1px 1px hsla(0,0%,0%,.1);
 }
-
-html[dir="rtl"] #toolbarContainer, .findbar, .secondaryToolbar {
-  box-shadow: inset -1px 0 0 hsla(0, 0%, 100%, .08),
-  inset 0 1px 1px hsla(0, 0%, 0%, .15),
-  inset 0 -1px 0 hsla(0, 0%, 100%, .05),
-  0 1px 0 hsla(0, 0%, 0%, .15),
-  0 1px 1px hsla(0, 0%, 0%, .1);
+html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar {
+  box-shadow: inset -1px 0 0 hsla(0,0%,100%,.08),
+              inset 0 1px 1px hsla(0,0%,0%,.15),
+              inset 0 -1px 0 hsla(0,0%,100%,.05),
+              0 1px 0 hsla(0,0%,0%,.15),
+              0 1px 1px hsla(0,0%,0%,.1);
 }
 
 #toolbarViewer {
@@ -481,94 +460,82 @@ html[dir="rtl"] #toolbarContainer, .findbar, .secondaryToolbar {
   position: relative;
   width: 100%;
   height: 4px;
-  border-bottom: 1px solid #333333;
-  background-color: #333333;
+  background-color: #333;
+  border-bottom: 1px solid #333;
 }
 
 #loadingBar .progress {
   position: absolute;
   top: 0;
   left: 0;
-  overflow: hidden;
   width: 0%;
   height: 100%;
+  background-color: #ddd;
+  overflow: hidden;
   -webkit-transition: width 200ms;
   transition: width 200ms;
-  background-color: #dddddd;
 }
 
 @-webkit-keyframes progressIndeterminate {
-  0% {
-    left: 0%;
-  }
-  50% {
-    left: 100%;
-  }
-  100% {
-    left: 100%;
-  }
+  0% { left: 0%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
 }
 
 @keyframes progressIndeterminate {
-  0% {
-    left: 0%;
-  }
-  50% {
-    left: 100%;
-  }
-  100% {
-    left: 100%;
-  }
+  0% { left: 0%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
 }
 
 #loadingBar .progress.indeterminate {
+  background-color: #999;
   -webkit-transition: none;
   transition: none;
-  background-color: #999999;
 }
 
 #loadingBar .indeterminate .glimmer {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50px;
   height: 100%;
+  width: 50px;
+
+  background-image: linear-gradient(to right, #999 0%, #fff 50%, #999 100%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 
   -webkit-animation: progressIndeterminate 2s linear infinite;
   animation: progressIndeterminate 2s linear infinite;
-  background-image: linear-gradient(to right, #999999 0%, #ffffff 50%, #999999 100%);
-
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
 }
 
 .findbar, .secondaryToolbar {
-  font-size: 12px;
-  line-height: 14px;
+  top: 32px;
   position: absolute;
   z-index: 10000;
-
-  top: 32px;
-  min-width: 16px;
   height: 32px;
-  margin: 4px 2px 4px 2px;
+
+  min-width: 16px;
   padding: 0px 6px 0px 6px;
-  cursor: default;
+  margin: 4px 2px 4px 2px;
+  color: hsl(0,0%,85%);
+  font-size: 12px;
+  line-height: 14px;
   text-align: left;
-  color: hsl(0, 0%, 85%);
+  cursor: default;
 }
 
-html[dir="ltr"] .findbar {
+html[dir='ltr'] .findbar {
   left: 68px;
 }
 
-html[dir="rtl"] .findbar {
+html[dir='rtl'] .findbar {
   right: 68px;
 }
 
 .findbar label {
-  -moz-user-select: none;
   -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 #findInput[data-status="pending"] {
@@ -576,168 +543,155 @@ html[dir="rtl"] .findbar {
   background-repeat: no-repeat;
   background-position: right;
 }
-
-html[dir="rtl"] #findInput[data-status="pending"] {
+html[dir='rtl'] #findInput[data-status="pending"] {
   background-position: left;
 }
 
 .secondaryToolbar {
-  z-index: 30000;
-  height: auto;
   padding: 6px;
+  height: auto;
+  z-index: 30000;
 }
-
-html[dir="ltr"] .secondaryToolbar {
+html[dir='ltr'] .secondaryToolbar {
   right: 4px;
 }
-
-html[dir="rtl"] .secondaryToolbar {
+html[dir='rtl'] .secondaryToolbar {
   left: 4px;
 }
 
 #secondaryToolbarButtonContainer {
-  overflow-y: auto;
   max-width: 200px;
   max-height: 400px;
-  margin-bottom: -4px;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  margin-bottom: -4px;
 }
 
 .doorHanger,
 .doorHangerRight {
-  border: 1px solid hsla(0, 0%, 0%, .5);
+  border: 1px solid hsla(0,0%,0%,.5);
   border-radius: 2px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
-
 .doorHanger:after, .doorHanger:before,
 .doorHangerRight:after, .doorHangerRight:before {
-  position: absolute;
   bottom: 100%;
-  width: 0;
-  height: 0;
-  content: " ";
-  pointer-events: none;
   border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
 }
-
 .doorHanger:after,
 .doorHangerRight:after {
+  border-bottom-color: hsla(0,0%,32%,.99);
   border-width: 8px;
-  border-bottom-color: hsla(0, 0%, 32%, .99);
 }
-
 .doorHanger:before,
 .doorHangerRight:before {
+  border-bottom-color: hsla(0,0%,0%,.5);
   border-width: 9px;
-  border-bottom-color: hsla(0, 0%, 0%, .5);
 }
 
-html[dir="ltr"] .doorHanger:after,
-html[dir="rtl"] .doorHangerRight:after {
+html[dir='ltr'] .doorHanger:after,
+html[dir='rtl'] .doorHangerRight:after {
   left: 13px;
   margin-left: -8px;
 }
 
-html[dir="ltr"] .doorHanger:before,
-html[dir="rtl"] .doorHangerRight:before {
+html[dir='ltr'] .doorHanger:before,
+html[dir='rtl'] .doorHangerRight:before {
   left: 13px;
   margin-left: -9px;
 }
 
-html[dir="rtl"] .doorHanger:after,
-html[dir="ltr"] .doorHangerRight:after {
+html[dir='rtl'] .doorHanger:after,
+html[dir='ltr'] .doorHangerRight:after {
   right: 13px;
   margin-right: -8px;
 }
 
-html[dir="rtl"] .doorHanger:before,
-html[dir="ltr"] .doorHangerRight:before {
+html[dir='rtl'] .doorHanger:before,
+html[dir='ltr'] .doorHangerRight:before {
   right: 13px;
   margin-right: -9px;
 }
 
 #findMsg {
   font-style: italic;
-  color: #a6b7d0;
+  color: #A6B7D0;
 }
 
 .notFound {
   background-color: rgb(255, 137, 153);
 }
 
-html[dir="ltr"] #toolbarViewerLeft {
+html[dir='ltr'] #toolbarViewerLeft {
   margin-left: -1px;
 }
-
-html[dir="rtl"] #toolbarViewerRight {
+html[dir='rtl'] #toolbarViewerRight {
   margin-right: -1px;
 }
 
-html[dir="ltr"] #toolbarViewerLeft,
-html[dir="rtl"] #toolbarViewerRight {
+html[dir='ltr'] #toolbarViewerLeft,
+html[dir='rtl'] #toolbarViewerRight {
   position: absolute;
   top: 0;
   left: 0;
 }
-
-html[dir="ltr"] #toolbarViewerRight,
-html[dir="rtl"] #toolbarViewerLeft {
+html[dir='ltr'] #toolbarViewerRight,
+html[dir='rtl'] #toolbarViewerLeft {
   position: absolute;
   top: 0;
   right: 0;
 }
-
-html[dir="ltr"] #toolbarViewerLeft > *,
-html[dir="ltr"] #toolbarViewerMiddle > *,
-html[dir="ltr"] #toolbarViewerRight > *,
-html[dir="ltr"] .findbar > * {
+html[dir='ltr'] #toolbarViewerLeft > *,
+html[dir='ltr'] #toolbarViewerMiddle > *,
+html[dir='ltr'] #toolbarViewerRight > *,
+html[dir='ltr'] .findbar > * {
   position: relative;
   float: left;
 }
-
-html[dir="rtl"] #toolbarViewerLeft > *,
-html[dir="rtl"] #toolbarViewerMiddle > *,
-html[dir="rtl"] #toolbarViewerRight > *,
-html[dir="rtl"] .findbar > * {
+html[dir='rtl'] #toolbarViewerLeft > *,
+html[dir='rtl'] #toolbarViewerMiddle > *,
+html[dir='rtl'] #toolbarViewerRight > *,
+html[dir='rtl'] .findbar > * {
   position: relative;
   float: right;
 }
 
-html[dir="ltr"] .splitToolbarButton {
-  display: inline-block;
+html[dir='ltr'] .splitToolbarButton {
   margin: 3px 2px 4px 0;
-}
-
-html[dir="rtl"] .splitToolbarButton {
   display: inline-block;
+}
+html[dir='rtl'] .splitToolbarButton {
   margin: 3px 0 4px 2px;
+  display: inline-block;
 }
-
-html[dir="ltr"] .splitToolbarButton > .toolbarButton {
+html[dir='ltr'] .splitToolbarButton > .toolbarButton {
+  border-radius: 0;
   float: left;
-  border-radius: 0;
 }
-
-html[dir="rtl"] .splitToolbarButton > .toolbarButton {
-  float: right;
+html[dir='rtl'] .splitToolbarButton > .toolbarButton {
   border-radius: 0;
+  float: right;
 }
 
 .toolbarButton,
 .secondaryToolbarButton,
 .overlayButton {
-  width: 32px;
-  height: 25px;
   border: 0 none;
   background: none;
+  width: 32px;
+  height: 25px;
 }
 
 .toolbarButton > span {
   display: inline-block;
-  overflow: hidden;
   width: 0;
   height: 0;
+  overflow: hidden;
 }
 
 .toolbarButton[disabled],
@@ -758,124 +712,115 @@ html[dir="rtl"] .splitToolbarButton > .toolbarButton {
 .splitToolbarButton:focus > .toolbarButton,
 .splitToolbarButton.toggled > .toolbarButton,
 .toolbarButton.textButton {
-  -webkit-transition-timing-function: ease;
-  transition-timing-function: ease;
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
-  -webkit-transition-property: background-color, border-color, box-shadow;
-  transition-property: background-color, border-color, box-shadow;
-  border: 1px solid hsla(0, 0%, 0%, .35);
-  border-color: hsla(0, 0%, 0%, .32) hsla(0, 0%, 0%, .38) hsla(0, 0%, 0%, .42);
-  background-color: hsla(0, 0%, 0%, .12);
-  background-image: linear-gradient(hsla(0, 0%, 100%, .05), hsla(0, 0%, 100%, 0));
+  background-color: hsla(0,0%,0%,.12);
+  background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
   background-clip: padding-box;
-  box-shadow: 0 1px 0 hsla(0, 0%, 100%, .05) inset,
-  0 0 1px hsla(0, 0%, 100%, .15) inset,
-  0 1px 0 hsla(0, 0%, 100%, .05);
+  border: 1px solid hsla(0,0%,0%,.35);
+  border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset,
+              0 0 1px hsla(0,0%,100%,.15) inset,
+              0 1px 0 hsla(0,0%,100%,.05);
+  -webkit-transition-property: background-color, border-color, box-shadow;
+  -webkit-transition-duration: 150ms;
+  -webkit-transition-timing-function: ease;
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
 
 }
-
 .splitToolbarButton > .toolbarButton:hover,
 .splitToolbarButton > .toolbarButton:focus,
 .dropdownToolbarButton:hover,
 .overlayButton:hover,
 .toolbarButton.textButton:hover,
 .toolbarButton.textButton:focus {
+  background-color: hsla(0,0%,0%,.2);
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset,
+              0 0 1px hsla(0,0%,100%,.15) inset,
+              0 0 1px hsla(0,0%,0%,.05);
   z-index: 199;
-  background-color: hsla(0, 0%, 0%, .2);
-  box-shadow: 0 1px 0 hsla(0, 0%, 100%, .05) inset,
-  0 0 1px hsla(0, 0%, 100%, .15) inset,
-  0 0 1px hsla(0, 0%, 0%, .05);
 }
-
 .splitToolbarButton > .toolbarButton {
   position: relative;
 }
-
-html[dir="ltr"] .splitToolbarButton > .toolbarButton:first-child,
-html[dir="rtl"] .splitToolbarButton > .toolbarButton:last-child {
+html[dir='ltr'] .splitToolbarButton > .toolbarButton:first-child,
+html[dir='rtl'] .splitToolbarButton > .toolbarButton:last-child {
   position: relative;
   margin: 0;
   margin-right: -1px;
-  border-right-color: transparent;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
+  border-right-color: transparent;
 }
-
-html[dir="ltr"] .splitToolbarButton > .toolbarButton:last-child,
-html[dir="rtl"] .splitToolbarButton > .toolbarButton:first-child {
+html[dir='ltr'] .splitToolbarButton > .toolbarButton:last-child,
+html[dir='rtl'] .splitToolbarButton > .toolbarButton:first-child {
   position: relative;
   margin: 0;
   margin-left: -1px;
-  border-left-color: transparent;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
+  border-left-color: transparent;
 }
-
 .splitToolbarButtonSeparator {
-  z-index: 99;
-  display: inline-block;
-  width: 1px;
-  margin: 5px 0;
   padding: 8px 0;
-  background-color: hsla(0, 0%, 0%, .5);
-  box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .08);
+  width: 1px;
+  background-color: hsla(0,0%,0%,.5);
+  z-index: 99;
+  box-shadow: 0 0 0 1px hsla(0,0%,100%,.08);
+  display: inline-block;
+  margin: 5px 0;
 }
-
-html[dir="ltr"] .splitToolbarButtonSeparator {
+html[dir='ltr'] .splitToolbarButtonSeparator {
   float: left;
 }
-
-html[dir="rtl"] .splitToolbarButtonSeparator {
+html[dir='rtl'] .splitToolbarButtonSeparator {
   float: right;
 }
-
 .splitToolbarButton:hover > .splitToolbarButtonSeparator,
 .splitToolbarButton.toggled > .splitToolbarButtonSeparator {
-  margin: 1px 0;
   padding: 12px 0;
-  -webkit-transition-timing-function: ease;
-  transition-timing-function: ease;
-  -webkit-transition-duration: 10ms;
-  transition-duration: 10ms;
+  margin: 1px 0;
+  box-shadow: 0 0 0 1px hsla(0,0%,100%,.03);
   -webkit-transition-property: padding;
+  -webkit-transition-duration: 10ms;
+  -webkit-transition-timing-function: ease;
   transition-property: padding;
-  box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .03);
+  transition-duration: 10ms;
+  transition-timing-function: ease;
 }
 
 .toolbarButton,
 .dropdownToolbarButton,
 .secondaryToolbarButton,
 .overlayButton {
-  font-size: 12px;
-  line-height: 14px;
   min-width: 16px;
   padding: 2px 6px 0;
-  cursor: default;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
-  -webkit-transition-timing-function: ease;
-  transition-timing-function: ease;
-  /* Opera does not support user-select, use <... unselectable="on"> instead */
-  -webkit-transition-duration: 150ms;
-  transition-duration: 150ms;
-  -webkit-transition-property: background-color, border-color, box-shadow;
-  transition-property: background-color, border-color, box-shadow;
-  color: hsla(0, 0%, 100%, .8);
   border: 1px solid transparent;
   border-radius: 2px;
+  color: hsla(0,0%,100%,.8);
+  font-size: 12px;
+  line-height: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  /* Opera does not support user-select, use <... unselectable="on"> instead */
+  cursor: default;
+  -webkit-transition-property: background-color, border-color, box-shadow;
+  -webkit-transition-duration: 150ms;
+  -webkit-transition-timing-function: ease;
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
 }
 
-html[dir="ltr"] .toolbarButton,
-html[dir="ltr"] .overlayButton,
-html[dir="ltr"] .dropdownToolbarButton {
+html[dir='ltr'] .toolbarButton,
+html[dir='ltr'] .overlayButton,
+html[dir='ltr'] .dropdownToolbarButton {
   margin: 3px 2px 4px 0;
 }
-
-html[dir="rtl"] .toolbarButton,
-html[dir="rtl"] .overlayButton,
-html[dir="rtl"] .dropdownToolbarButton {
+html[dir='rtl'] .toolbarButton,
+html[dir='rtl'] .overlayButton,
+html[dir='rtl'] .dropdownToolbarButton {
   margin: 3px 0 4px 2px;
 }
 
@@ -885,91 +830,89 @@ html[dir="rtl"] .dropdownToolbarButton {
 .overlayButton,
 .secondaryToolbarButton:hover,
 .secondaryToolbarButton:focus {
-  border: 1px solid hsla(0, 0%, 0%, .35);
-  border-color: hsla(0, 0%, 0%, .32) hsla(0, 0%, 0%, .38) hsla(0, 0%, 0%, .42);
-  background-color: hsla(0, 0%, 0%, .12);
-  background-image: linear-gradient(hsla(0, 0%, 100%, .05), hsla(0, 0%, 100%, 0));
+  background-color: hsla(0,0%,0%,.12);
+  background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
   background-clip: padding-box;
-  box-shadow: 0 1px 0 hsla(0, 0%, 100%, .05) inset,
-  0 0 1px hsla(0, 0%, 100%, .15) inset,
-  0 1px 0 hsla(0, 0%, 100%, .05);
+  border: 1px solid hsla(0,0%,0%,.35);
+  border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset,
+              0 0 1px hsla(0,0%,100%,.15) inset,
+              0 1px 0 hsla(0,0%,100%,.05);
 }
 
 .toolbarButton:hover:active,
 .overlayButton:hover:active,
 .dropdownToolbarButton:hover:active,
 .secondaryToolbarButton:hover:active {
-  -webkit-transition-timing-function: linear;
-  transition-timing-function: linear;
-  -webkit-transition-duration: 10ms;
-  transition-duration: 10ms;
+  background-color: hsla(0,0%,0%,.2);
+  background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
+  border-color: hsla(0,0%,0%,.35) hsla(0,0%,0%,.4) hsla(0,0%,0%,.45);
+  box-shadow: 0 1px 1px hsla(0,0%,0%,.1) inset,
+              0 0 1px hsla(0,0%,0%,.2) inset,
+              0 1px 0 hsla(0,0%,100%,.05);
   -webkit-transition-property: background-color, border-color, box-shadow;
+  -webkit-transition-duration: 10ms;
+  -webkit-transition-timing-function: linear;
   transition-property: background-color, border-color, box-shadow;
-  border-color: hsla(0, 0%, 0%, .35) hsla(0, 0%, 0%, .4) hsla(0, 0%, 0%, .45);
-  background-color: hsla(0, 0%, 0%, .2);
-  background-image: linear-gradient(hsla(0, 0%, 100%, .05), hsla(0, 0%, 100%, 0));
-  box-shadow: 0 1px 1px hsla(0, 0%, 0%, .1) inset,
-  0 0 1px hsla(0, 0%, 0%, .2) inset,
-  0 1px 0 hsla(0, 0%, 100%, .05);
+  transition-duration: 10ms;
+  transition-timing-function: linear;
 }
 
 .toolbarButton.toggled,
 .splitToolbarButton.toggled > .toolbarButton.toggled,
 .secondaryToolbarButton.toggled {
-  -webkit-transition-timing-function: linear;
-  transition-timing-function: linear;
-  -webkit-transition-duration: 10ms;
-  transition-duration: 10ms;
+  background-color: hsla(0,0%,0%,.3);
+  background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
+  border-color: hsla(0,0%,0%,.4) hsla(0,0%,0%,.45) hsla(0,0%,0%,.5);
+  box-shadow: 0 1px 1px hsla(0,0%,0%,.1) inset,
+              0 0 1px hsla(0,0%,0%,.2) inset,
+              0 1px 0 hsla(0,0%,100%,.05);
   -webkit-transition-property: background-color, border-color, box-shadow;
+  -webkit-transition-duration: 10ms;
+  -webkit-transition-timing-function: linear;
   transition-property: background-color, border-color, box-shadow;
-  border-color: hsla(0, 0%, 0%, .4) hsla(0, 0%, 0%, .45) hsla(0, 0%, 0%, .5);
-  background-color: hsla(0, 0%, 0%, .3);
-  background-image: linear-gradient(hsla(0, 0%, 100%, .05), hsla(0, 0%, 100%, 0));
-  box-shadow: 0 1px 1px hsla(0, 0%, 0%, .1) inset,
-  0 0 1px hsla(0, 0%, 0%, .2) inset,
-  0 1px 0 hsla(0, 0%, 100%, .05);
+  transition-duration: 10ms;
+  transition-timing-function: linear;
 }
 
 .toolbarButton.toggled:hover:active,
 .splitToolbarButton.toggled > .toolbarButton.toggled:hover:active,
 .secondaryToolbarButton.toggled:hover:active {
-  border-color: hsla(0, 0%, 0%, .4) hsla(0, 0%, 0%, .5) hsla(0, 0%, 0%, .55);
-  background-color: hsla(0, 0%, 0%, .4);
-  box-shadow: 0 1px 1px hsla(0, 0%, 0%, .2) inset,
-  0 0 1px hsla(0, 0%, 0%, .3) inset,
-  0 1px 0 hsla(0, 0%, 100%, .05);
+  background-color: hsla(0,0%,0%,.4);
+  border-color: hsla(0,0%,0%,.4) hsla(0,0%,0%,.5) hsla(0,0%,0%,.55);
+  box-shadow: 0 1px 1px hsla(0,0%,0%,.2) inset,
+              0 0 1px hsla(0,0%,0%,.3) inset,
+              0 1px 0 hsla(0,0%,100%,.05);
 }
 
 .dropdownToolbarButton {
-  overflow: hidden;
   width: 120px;
   max-width: 120px;
   padding: 3px 2px 2px;
+  overflow: hidden;
   background: url(images/toolbarButton-menuArrows.png) no-repeat;
 }
-
-html[dir="ltr"] .dropdownToolbarButton {
+html[dir='ltr'] .dropdownToolbarButton {
   background-position: 95%;
 }
-
-html[dir="rtl"] .dropdownToolbarButton {
+html[dir='rtl'] .dropdownToolbarButton {
   background-position: 5%;
 }
 
 .dropdownToolbarButton > select {
-  font-size: 12px;
-  min-width: 140px;
-  margin: 0;
-  padding: 0;
-  color: hsl(0, 0%, 95%);
-  border: none;
-  background: rgba(0, 0, 0, 0); /* Opera does not support 'transparent' <select> background */
   -webkit-appearance: none;
   -moz-appearance: none; /* in the future this might matter, see bugzilla bug #649849 */
+  min-width: 140px;
+  font-size: 12px;
+  color: hsl(0,0%,95%);
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: rgba(0,0,0,0); /* Opera does not support 'transparent' <select> background */
 }
 
 .dropdownToolbarButton > select > option {
-  background: hsl(0, 0%, 24%);
+  background: hsl(0,0%,24%);
 }
 
 #customScaleOption {
@@ -980,45 +923,42 @@ html[dir="rtl"] .dropdownToolbarButton {
   border-bottom: 1px rgba(255, 255, 255, .5) solid;
 }
 
-html[dir="ltr"] .splitToolbarButton:first-child,
-html[dir="ltr"] .toolbarButton:first-child,
-html[dir="rtl"] .splitToolbarButton:last-child,
-html[dir="rtl"] .toolbarButton:last-child {
+html[dir='ltr'] .splitToolbarButton:first-child,
+html[dir='ltr'] .toolbarButton:first-child,
+html[dir='rtl'] .splitToolbarButton:last-child,
+html[dir='rtl'] .toolbarButton:last-child {
   margin-left: 4px;
 }
-
-html[dir="ltr"] .splitToolbarButton:last-child,
-html[dir="ltr"] .toolbarButton:last-child,
-html[dir="rtl"] .splitToolbarButton:first-child,
-html[dir="rtl"] .toolbarButton:first-child {
+html[dir='ltr'] .splitToolbarButton:last-child,
+html[dir='ltr'] .toolbarButton:last-child,
+html[dir='rtl'] .splitToolbarButton:first-child,
+html[dir='rtl'] .toolbarButton:first-child {
   margin-right: 4px;
 }
 
 .toolbarButtonSpacer {
-  display: inline-block;
   width: 30px;
+  display: inline-block;
   height: 1px;
 }
 
 .toolbarButtonFlexibleSpacer {
-  min-width: 30px;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
+  min-width: 30px;
 }
 
-html[dir="ltr"] #findPrevious {
+html[dir='ltr'] #findPrevious {
   margin-left: 3px;
 }
-
-html[dir="ltr"] #findNext {
+html[dir='ltr'] #findNext {
   margin-right: 3px;
 }
 
-html[dir="rtl"] #findPrevious {
+html[dir='rtl'] #findPrevious {
   margin-right: 3px;
 }
-
-html[dir="rtl"] #findNext {
+html[dir='rtl'] #findNext {
   margin-left: 3px;
 }
 
@@ -1027,64 +967,57 @@ html[dir="rtl"] #findNext {
   /* All matching images have a size of 16x16
    * All relevant containers have a size of 32x25 */
   position: absolute;
+  display: inline-block;
   top: 4px;
   left: 7px;
-  display: inline-block;
 }
 
 html[dir="ltr"] .secondaryToolbarButton::before {
   left: 4px;
 }
-
 html[dir="rtl"] .secondaryToolbarButton::before {
   right: 4px;
 }
 
-html[dir="ltr"] .toolbarButton#sidebarToggle::before {
+html[dir='ltr'] .toolbarButton#sidebarToggle::before {
   content: url(images/toolbarButton-sidebarToggle.png);
 }
-
-html[dir="rtl"] .toolbarButton#sidebarToggle::before {
+html[dir='rtl'] .toolbarButton#sidebarToggle::before {
   content: url(images/toolbarButton-sidebarToggle-rtl.png);
 }
 
-html[dir="ltr"] .toolbarButton#secondaryToolbarToggle::before {
+html[dir='ltr'] .toolbarButton#secondaryToolbarToggle::before {
   content: url(images/toolbarButton-secondaryToolbarToggle.png);
 }
-
-html[dir="rtl"] .toolbarButton#secondaryToolbarToggle::before {
+html[dir='rtl'] .toolbarButton#secondaryToolbarToggle::before {
   content: url(images/toolbarButton-secondaryToolbarToggle-rtl.png);
 }
 
-html[dir="ltr"] .toolbarButton.findPrevious::before {
+html[dir='ltr'] .toolbarButton.findPrevious::before {
   content: url(images/findbarButton-previous.png);
 }
-
-html[dir="rtl"] .toolbarButton.findPrevious::before {
+html[dir='rtl'] .toolbarButton.findPrevious::before {
   content: url(images/findbarButton-previous-rtl.png);
 }
 
-html[dir="ltr"] .toolbarButton.findNext::before {
+html[dir='ltr'] .toolbarButton.findNext::before {
   content: url(images/findbarButton-next.png);
 }
-
-html[dir="rtl"] .toolbarButton.findNext::before {
+html[dir='rtl'] .toolbarButton.findNext::before {
   content: url(images/findbarButton-next-rtl.png);
 }
 
-html[dir="ltr"] .toolbarButton.pageUp::before {
+html[dir='ltr'] .toolbarButton.pageUp::before {
   content: url(images/toolbarButton-pageUp.png);
 }
-
-html[dir="rtl"] .toolbarButton.pageUp::before {
+html[dir='rtl'] .toolbarButton.pageUp::before {
   content: url(images/toolbarButton-pageUp-rtl.png);
 }
 
-html[dir="ltr"] .toolbarButton.pageDown::before {
+html[dir='ltr'] .toolbarButton.pageDown::before {
   content: url(images/toolbarButton-pageDown.png);
 }
-
-html[dir="rtl"] .toolbarButton.pageDown::before {
+html[dir='rtl'] .toolbarButton.pageDown::before {
   content: url(images/toolbarButton-pageDown-rtl.png);
 }
 
@@ -1118,21 +1051,20 @@ html[dir="rtl"] .toolbarButton.pageDown::before {
 
 .toolbarButton.bookmark,
 .secondaryToolbarButton.bookmark {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
+  outline: none;
   padding-top: 4px;
   text-decoration: none;
-  outline: none;
 }
-
 .secondaryToolbarButton.bookmark {
   padding-top: 5px;
 }
 
-.bookmark[href="#"] {
-  pointer-events: none;
+.bookmark[href='#'] {
   opacity: .5;
+  pointer-events: none;
 }
 
 .toolbarButton.bookmark::before,
@@ -1147,7 +1079,6 @@ html[dir="rtl"] .toolbarButton.pageDown::before {
 html[dir="ltr"] #viewOutline.toolbarButton::before {
   content: url(images/toolbarButton-viewOutline.png);
 }
-
 html[dir="rtl"] #viewOutline.toolbarButton::before {
   content: url(images/toolbarButton-viewOutline-rtl.png);
 }
@@ -1162,29 +1093,25 @@ html[dir="rtl"] #viewOutline.toolbarButton::before {
 
 .secondaryToolbarButton {
   position: relative;
-  width: auto;
-  min-width: 100%;
-  height: auto;
-  min-height: 25px;
   margin: 0 0 4px 0;
   padding: 3px 0 1px 0;
+  height: auto;
+  min-height: 25px;
+  width: auto;
+  min-width: 100%;
   white-space: normal;
 }
-
 html[dir="ltr"] .secondaryToolbarButton {
   padding-left: 24px;
   text-align: left;
 }
-
 html[dir="rtl"] .secondaryToolbarButton {
   padding-right: 24px;
   text-align: right;
 }
-
 html[dir="ltr"] .secondaryToolbarButton.bookmark {
   padding-left: 27px;
 }
-
 html[dir="rtl"] .secondaryToolbarButton.bookmark {
   padding-right: 27px;
 }
@@ -1192,7 +1119,6 @@ html[dir="rtl"] .secondaryToolbarButton.bookmark {
 html[dir="ltr"] .secondaryToolbarButton > span {
   padding-right: 4px;
 }
-
 html[dir="rtl"] .secondaryToolbarButton > span {
   padding-left: 4px;
 }
@@ -1223,49 +1149,47 @@ html[dir="rtl"] .secondaryToolbarButton > span {
 
 .verticalToolbarSeparator {
   display: block;
-  width: 1px;
-  margin: 8px 4px;
   padding: 8px 0;
-  background-color: hsla(0, 0%, 0%, .5);
-  box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .08);
+  margin: 8px 4px;
+  width: 1px;
+  background-color: hsla(0,0%,0%,.5);
+  box-shadow: 0 0 0 1px hsla(0,0%,100%,.08);
 }
-
-html[dir="ltr"] .verticalToolbarSeparator {
+html[dir='ltr'] .verticalToolbarSeparator {
   margin-left: 2px;
 }
-
-html[dir="rtl"] .verticalToolbarSeparator {
+html[dir='rtl'] .verticalToolbarSeparator {
   margin-right: 2px;
 }
 
 .horizontalToolbarSeparator {
   display: block;
-  width: 100%;
-  height: 1px;
   margin: 0 0 4px 0;
-  background-color: hsla(0, 0%, 0%, .5);
-  box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .08);
+  height: 1px;
+  width: 100%;
+  background-color: hsla(0,0%,0%,.5);
+  box-shadow: 0 0 0 1px hsla(0,0%,100%,.08);
 }
 
 .toolbarField {
+  padding: 3px 6px;
+  margin: 4px 0 4px 0;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background-color: hsla(0,0%,100%,.09);
+  background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
+  background-clip: padding-box;
+  border: 1px solid hsla(0,0%,0%,.35);
+  border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+  box-shadow: 0 1px 0 hsla(0,0%,0%,.05) inset,
+              0 1px 0 hsla(0,0%,100%,.05);
+  color: hsl(0,0%,95%);
   font-size: 12px;
   line-height: 14px;
-  margin: 4px 0 4px 0;
-  padding: 3px 6px;
-  transition-timing-function: ease;
-  transition-duration: 150ms;
-  transition-property: background-color, border-color, box-shadow;
-  color: hsl(0, 0%, 95%);
-  border: 1px solid transparent;
-  border: 1px solid hsla(0, 0%, 0%, .35);
-  border-color: hsla(0, 0%, 0%, .32) hsla(0, 0%, 0%, .38) hsla(0, 0%, 0%, .42);
-  border-radius: 2px;
   outline-style: none;
-  background-color: hsla(0, 0%, 100%, .09);
-  background-image: linear-gradient(hsla(0, 0%, 100%, .05), hsla(0, 0%, 100%, 0));
-  background-clip: padding-box;
-  box-shadow: 0 1px 0 hsla(0, 0%, 0%, .05) inset,
-  0 1px 0 hsla(0, 0%, 100%, .05);
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
 }
 
 .toolbarField[type=checkbox] {
@@ -1274,10 +1198,10 @@ html[dir="rtl"] .verticalToolbarSeparator {
 }
 
 .toolbarField.pageNumber {
-  width: 40px;
+  -moz-appearance: textfield; /* hides the spinner in moz */
   min-width: 16px;
   text-align: right;
-  -moz-appearance: textfield; /* hides the spinner in moz */
+  width: 40px;
 }
 
 .toolbarField.pageNumber.visiblePageIsLoading {
@@ -1288,42 +1212,42 @@ html[dir="rtl"] .verticalToolbarSeparator {
 
 .toolbarField.pageNumber::-webkit-inner-spin-button,
 .toolbarField.pageNumber::-webkit-outer-spin-button {
-  margin: 0;
-  -webkit-appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .toolbarField:hover {
-  border-color: hsla(0, 0%, 0%, .4) hsla(0, 0%, 0%, .43) hsla(0, 0%, 0%, .45);
-  background-color: hsla(0, 0%, 100%, .11);
+  background-color: hsla(0,0%,100%,.11);
+  border-color: hsla(0,0%,0%,.4) hsla(0,0%,0%,.43) hsla(0,0%,0%,.45);
 }
 
 .toolbarField:focus {
-  border-color: hsla(204, 100%, 65%, .8) hsla(204, 100%, 65%, .85) hsla(204, 100%, 65%, .9);
-  background-color: hsla(0, 0%, 100%, .15);
+  background-color: hsla(0,0%,100%,.15);
+  border-color: hsla(204,100%,65%,.8) hsla(204,100%,65%,.85) hsla(204,100%,65%,.9);
 }
 
 .toolbarLabel {
-  font-size: 12px;
-  line-height: 14px;
   min-width: 16px;
-  margin: 4px 2px 4px 0;
   padding: 3px 6px 3px 2px;
-  cursor: default;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  text-align: left;
-  color: hsl(0, 0%, 85%);
+  margin: 4px 2px 4px 0;
   border: 1px solid transparent;
   border-radius: 2px;
+  color: hsl(0,0%,85%);
+  font-size: 12px;
+  line-height: 14px;
+  text-align: left;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  cursor: default;
 }
 
 #thumbnailView {
   position: absolute;
+  width: 120px;
   top: 0;
   bottom: 0;
-  overflow: auto;
-  width: 120px;
   padding: 10px 40px 0;
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -1337,22 +1261,22 @@ html[dir="rtl"] .verticalToolbarSeparator {
 }
 
 .thumbnail:not([data-loaded]) {
-  margin-bottom: 10px;
   border: 1px dashed rgba(255, 255, 255, 0.5);
+  margin-bottom: 10px;
 }
 
 .thumbnailImage {
-  z-index: 99;
   transition-duration: 150ms;
-  opacity: 0.8;
   border: 1px solid transparent;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0.8;
+  z-index: 99;
 }
 
 .thumbnailSelectionRing {
+  border-radius: 2px;
   padding: 7px;
   transition-duration: 150ms;
-  border-radius: 2px;
 }
 
 a:focus > .thumbnail > .thumbnailSelectionRing > .thumbnailImage,
@@ -1362,160 +1286,146 @@ a:focus > .thumbnail > .thumbnailSelectionRing > .thumbnailImage,
 
 a:focus > .thumbnail > .thumbnailSelectionRing,
 .thumbnail:hover > .thumbnailSelectionRing {
-  color: hsla(0, 0%, 100%, .9);
-  background-color: hsla(0, 0%, 100%, .15);
-  background-image: linear-gradient(hsla(0, 0%, 100%, .05), hsla(0, 0%, 100%, 0));
+  background-color: hsla(0,0%,100%,.15);
+  background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
   background-clip: padding-box;
-  box-shadow: 0 1px 0 hsla(0, 0%, 100%, .05) inset,
-  0 0 1px hsla(0, 0%, 100%, .2) inset,
-  0 0 1px hsla(0, 0%, 0%, .2);
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset,
+              0 0 1px hsla(0,0%,100%,.2) inset,
+              0 0 1px hsla(0,0%,0%,.2);
+  color: hsla(0,0%,100%,.9);
 }
 
 .thumbnail.selected > .thumbnailSelectionRing > .thumbnailImage {
+  box-shadow: 0 0 0 1px hsla(0,0%,0%,.5);
   opacity: 1;
-  box-shadow: 0 0 0 1px hsla(0, 0%, 0%, .5);
 }
 
 .thumbnail.selected > .thumbnailSelectionRing {
-  color: hsla(0, 0%, 100%, 1);
-  background-color: hsla(0, 0%, 100%, .3);
-  background-image: linear-gradient(hsla(0, 0%, 100%, .05), hsla(0, 0%, 100%, 0));
+  background-color: hsla(0,0%,100%,.3);
+  background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
   background-clip: padding-box;
-  box-shadow: 0 1px 0 hsla(0, 0%, 100%, .05) inset,
-  0 0 1px hsla(0, 0%, 100%, .1) inset,
-  0 0 1px hsla(0, 0%, 0%, .2);
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset,
+              0 0 1px hsla(0,0%,100%,.1) inset,
+              0 0 1px hsla(0,0%,0%,.2);
+  color: hsla(0,0%,100%,1);
 }
 
 #outlineView,
 #attachmentsView {
   position: absolute;
+  width: 192px;
   top: 0;
   bottom: 0;
   overflow: auto;
-  width: 192px;
-  -moz-user-select: none;
-  -webkit-user-select: none;
   -webkit-overflow-scrolling: touch;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 #outlineView {
   padding: 4px 4px 0;
 }
-
 #attachmentsView {
   padding: 3px 4px 0;
 }
 
-html[dir="ltr"] .outlineItem > .outlineItems {
+html[dir='ltr'] .outlineItem > .outlineItems {
   margin-left: 20px;
 }
 
-html[dir="rtl"] .outlineItem > .outlineItems {
+html[dir='rtl'] .outlineItem > .outlineItems {
   margin-right: 20px;
 }
 
 .outlineItem > a,
 .attachmentsItem > button {
-  font-size: 13px;
-  line-height: 15px;
+  text-decoration: none;
   display: inline-block;
   min-width: 95%;
   height: auto;
   margin-bottom: 1px;
+  border-radius: 2px;
+  color: hsla(0,0%,100%,.8);
+  font-size: 13px;
+  line-height: 15px;
   -moz-user-select: none;
   white-space: normal;
-  text-decoration: none;
-  color: hsla(0, 0%, 100%, .8);
-  border-radius: 2px;
 }
 
 .attachmentsItem > button {
-  width: 100%;
-  cursor: pointer;
   border: 0 none;
   background: none;
+  cursor: pointer;
+  width: 100%;
 }
 
-html[dir="ltr"] .outlineItem > a {
+html[dir='ltr'] .outlineItem > a {
   padding: 2px 0 5px 10px;
 }
-
-html[dir="ltr"] .attachmentsItem > button {
+html[dir='ltr'] .attachmentsItem > button {
   padding: 2px 0 3px 7px;
   text-align: left;
 }
 
-html[dir="rtl"] .outlineItem > a {
+html[dir='rtl'] .outlineItem > a {
   padding: 2px 10px 5px 0;
 }
-
-html[dir="rtl"] .attachmentsItem > button {
+html[dir='rtl'] .attachmentsItem > button {
   padding: 2px 7px 3px 0;
   text-align: right;
 }
 
 .outlineItem > a:hover,
 .attachmentsItem > button:hover {
-  color: hsla(0, 0%, 100%, .9);
-  background-color: hsla(0, 0%, 100%, .02);
-  background-image: linear-gradient(hsla(0, 0%, 100%, .05), hsla(0, 0%, 100%, 0));
+  background-color: hsla(0,0%,100%,.02);
+  background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
   background-clip: padding-box;
-  box-shadow: 0 1px 0 hsla(0, 0%, 100%, .05) inset,
-  0 0 1px hsla(0, 0%, 100%, .2) inset,
-  0 0 1px hsla(0, 0%, 0%, .2);
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset,
+              0 0 1px hsla(0,0%,100%,.2) inset,
+              0 0 1px hsla(0,0%,0%,.2);
+  color: hsla(0,0%,100%,.9);
 }
 
 .outlineItem.selected {
-  color: hsla(0, 0%, 100%, 1);
-  background-color: hsla(0, 0%, 100%, .08);
-  background-image: linear-gradient(hsla(0, 0%, 100%, .05), hsla(0, 0%, 100%, 0));
+  background-color: hsla(0,0%,100%,.08);
+  background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
   background-clip: padding-box;
-  box-shadow: 0 1px 0 hsla(0, 0%, 100%, .05) inset,
-  0 0 1px hsla(0, 0%, 100%, .1) inset,
-  0 0 1px hsla(0, 0%, 0%, .2);
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset,
+              0 0 1px hsla(0,0%,100%,.1) inset,
+              0 0 1px hsla(0,0%,0%,.2);
+  color: hsla(0,0%,100%,1);
 }
 
 .noResults {
   font-size: 12px;
+  color: hsla(0,0%,100%,.8);
   font-style: italic;
   cursor: default;
-  color: hsla(0, 0%, 100%, .8);
 }
+
 
 /* TODO: file FF bug to support ::-moz-selection:window-inactive
    so we can override the opaque grey background when the window is inactive;
    see https://bugzilla.mozilla.org/show_bug.cgi?id=706209 */
-::selection {
-  background: rgba(0, 0, 255, 0.3);
-}
+::selection { background: rgba(0,0,255,0.3); }
+::-moz-selection { background: rgba(0,0,255,0.3); }
 
-::-moz-selection {
-  background: rgba(0, 0, 255, 0.3);
-}
-
-.textLayer ::selection {
-  background: rgb(0, 0, 255);
-}
-
-.textLayer ::-moz-selection {
-  background: rgb(0, 0, 255);
-}
-
+.textLayer ::selection { background: rgb(0,0,255); }
+.textLayer ::-moz-selection { background: rgb(0,0,255); }
 .textLayer {
   opacity: 0.2;
 }
 
 #errorWrapper {
-  font-size: 0.8em;
-  position: absolute;
-  z-index: 1000;
-  right: 0;
-  left: 0;
-  padding: 3px;
+  background: none repeat scroll 0 0 #FF5555;
   color: white;
-  background: none repeat scroll 0 0 #ff5555;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 1000;
+  padding: 3px;
+  font-size: 0.8em;
 }
-
 .loadingInProgress #errorWrapper {
   top: 37px;
 }
@@ -1529,11 +1439,11 @@ html[dir="rtl"] .attachmentsItem > button {
 }
 
 #errorMoreInfo {
-  width: 98%;
-  margin: 3px;
-  padding: 3px;
+  background-color: #FFFFFF;
   color: black;
-  background-color: #ffffff;
+  padding: 3px;
+  margin: 3px;
+  width: 98%;
 }
 
 .overlayButton {
@@ -1543,14 +1453,13 @@ html[dir="rtl"] .attachmentsItem > button {
 }
 
 #overlayContainer {
-  position: absolute;
-  z-index: 40000;
   display: table;
+  position: absolute;
   width: 100%;
   height: 100%;
-  background-color: hsla(0, 0%, 0%, .2);
+  background-color: hsla(0,0%,0%,.2);
+  z-index: 40000;
 }
-
 #overlayContainer > * {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -1558,27 +1467,27 @@ html[dir="rtl"] .attachmentsItem > button {
 
 #overlayContainer > .container {
   display: table-cell;
-  text-align: center;
   vertical-align: middle;
+  text-align: center;
 }
 
 #overlayContainer > .container > .dialog {
-  font-size: 12px;
-  line-height: 14px;
   display: inline-block;
   padding: 15px;
   border-spacing: 4px;
-  color: hsl(0, 0%, 85%);
-  border: 1px solid hsla(0, 0%, 0%, .5);
-  border-radius: 4px;
+  color: hsl(0,0%,85%);
+  font-size: 12px;
+  line-height: 14px;
   background-color: #474747; /* fallback */
   background-image: url(images/texture.png),
-  linear-gradient(hsla(0, 0%, 32%, .99), hsla(0, 0%, 27%, .95));
-  box-shadow: inset 1px 0 0 hsla(0, 0%, 100%, .08),
-  inset 0 1px 1px hsla(0, 0%, 0%, .15),
-  inset 0 -1px 0 hsla(0, 0%, 100%, .05),
-  0 1px 0 hsla(0, 0%, 0%, .15),
-  0 1px 1px hsla(0, 0%, 0%, .1);
+                    linear-gradient(hsla(0,0%,32%,.99), hsla(0,0%,27%,.95));
+  box-shadow: inset 1px 0 0 hsla(0,0%,100%,.08),
+              inset 0 1px 1px hsla(0,0%,0%,.15),
+              inset 0 -1px 0 hsla(0,0%,100%,.05),
+              0 1px 0 hsla(0,0%,0%,.15),
+              0 1px 1px hsla(0,0%,0%,.1);
+  border: 1px solid hsla(0,0%,0%,.5);
+  border-radius: 4px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -1593,19 +1502,18 @@ html[dir="rtl"] .attachmentsItem > button {
 .dialog .toolbarField {
   margin: 5px 0;
 }
-
 .dialog .toolbarField:hover,
 .dialog .toolbarField:focus {
-  border-color: hsla(0, 0%, 0%, .32) hsla(0, 0%, 0%, .38) hsla(0, 0%, 0%, .42);
+  border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
 }
 
 .dialog .separator {
   display: block;
-  width: 100%;
-  height: 1px;
   margin: 4px 0 4px 0;
-  background-color: hsla(0, 0%, 0%, .5);
-  box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .08);
+  height: 1px;
+  width: 100%;
+  background-color: hsla(0,0%,0%,.5);
+  box-shadow: 0 0 0 1px hsla(0,0%,100%,.08);
 }
 
 .dialog .buttonRow {
@@ -1616,7 +1524,6 @@ html[dir="rtl"] .attachmentsItem > button {
 #passwordOverlay > .dialog {
   text-align: center;
 }
-
 #passwordOverlay .toolbarField {
   width: 200px;
 }
@@ -1624,29 +1531,23 @@ html[dir="rtl"] .attachmentsItem > button {
 #documentPropertiesOverlay > .dialog {
   text-align: left;
 }
-
 #documentPropertiesOverlay .row > * {
   min-width: 100px;
 }
-
-html[dir="ltr"] #documentPropertiesOverlay .row > * {
+html[dir='ltr'] #documentPropertiesOverlay .row > * {
   text-align: left;
 }
-
-html[dir="rtl"] #documentPropertiesOverlay .row > * {
+html[dir='rtl'] #documentPropertiesOverlay .row > * {
   text-align: right;
 }
-
 #documentPropertiesOverlay .row > span {
   width: 125px;
   word-wrap: break-word;
 }
-
 #documentPropertiesOverlay .row > p {
   max-width: 225px;
   word-wrap: break-word;
 }
-
 #documentPropertiesOverlay .buttonRow {
   margin-top: 10px;
 }
@@ -1656,79 +1557,71 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
 }
 
 .fileInput {
-  position: fixed;
-  top: 0;
-  right: 0;
-  visibility: hidden;
-  margin-top: 5px;
-  color: black;
   background: white;
+  color: black;
+  margin-top: 5px;
+  visibility: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
 }
 
 #PDFBug {
-  font-size: 10px;
+  background: none repeat scroll 0 0 white;
+  border: 1px solid #666666;
   position: fixed;
   top: 32px;
   right: 0;
   bottom: 0;
-  width: 300px;
+  font-size: 10px;
   padding: 0;
-  border: 1px solid #666666;
-  background: none repeat scroll 0 0 white;
+  width: 300px;
 }
-
 #PDFBug .controls {
-  padding: 3px;
-  border-bottom: 1px solid #666666;
-  background: #eeeeee;
+    background:#EEEEEE;
+    border-bottom: 1px solid #666666;
+    padding: 3px;
 }
-
 #PDFBug .panels {
-  position: absolute;
-  top: 27px;
-  right: 0;
   bottom: 0;
   left: 0;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+  position: absolute;
+  right: 0;
+  top: 27px;
 }
-
 #PDFBug button.active {
   font-weight: bold;
 }
-
 .debuggerShowText {
-  color: blue;
   background: none repeat scroll 0 0 yellow;
+  color: blue;
 }
-
 .debuggerHideText:hover {
   background: none repeat scroll 0 0 yellow;
 }
-
 #PDFBug .stats {
   font-family: courier;
   font-size: 10px;
   white-space: pre;
 }
-
 #PDFBug .stats .title {
-  font-weight: bold;
+    font-weight: bold;
 }
-
 #PDFBug table {
   font-size: 10px;
 }
 
 #viewer.textLayer-visible .textLayer > div,
 #viewer.textLayer-hover .textLayer > div:hover {
-  color: black;
   background-color: white;
+  color: black;
 }
 
 #viewer.textLayer-shadow .textLayer > div {
+  background-color: rgba(255,255,255, .6);
   color: black;
-  background-color: rgba(255, 255, 255, .6);
 }
 
 .grab-to-pan-grab {
@@ -1737,27 +1630,25 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
   cursor: -moz-grab !important;
   cursor: grab !important;
 }
-
 .grab-to-pan-grab *:not(input):not(textarea):not(button):not(select):not(:link) {
   cursor: inherit !important;
 }
-
 .grab-to-pan-grab:active,
 .grab-to-pan-grabbing {
-  position: fixed;
-  z-index: 50000; /* should be higher than anything else in PDF.js! */
-  top: 0;
-  right: 0;
-
-  bottom: 0;
-  left: 0;
-  display: block;
-  overflow: hidden;
   cursor: url("images/grabbing.cur"), move !important;
   cursor: -webkit-grabbing !important;
   cursor: -moz-grabbing !important;
   cursor: grabbing !important;
+
+  position: fixed;
   background: transparent;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 50000; /* should be higher than anything else in PDF.js! */
 }
 
 @page {
@@ -1771,27 +1662,26 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
 @media screen and (min-resolution: 2dppx) {
   /* Rules for Retina screens */
   .toolbarButton::before {
-    top: -5px;
     -webkit-transform: scale(0.5);
     transform: scale(0.5);
+    top: -5px;
   }
 
   .secondaryToolbarButton::before {
-    top: -4px;
     -webkit-transform: scale(0.5);
     transform: scale(0.5);
+    top: -4px;
   }
 
-  html[dir="ltr"] .toolbarButton::before,
-  html[dir="rtl"] .toolbarButton::before {
+  html[dir='ltr'] .toolbarButton::before,
+  html[dir='rtl'] .toolbarButton::before {
     left: -1px;
   }
 
-  html[dir="ltr"] .secondaryToolbarButton::before {
+  html[dir='ltr'] .secondaryToolbarButton::before {
     left: -2px;
   }
-
-  html[dir="rtl"] .secondaryToolbarButton::before {
+  html[dir='rtl'] .secondaryToolbarButton::before {
     left: 186px;
   }
 
@@ -1806,51 +1696,45 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
     background-size: 7px 16px;
   }
 
-  html[dir="ltr"] .toolbarButton#sidebarToggle::before {
+  html[dir='ltr'] .toolbarButton#sidebarToggle::before {
     content: url(images/toolbarButton-sidebarToggle@2x.png);
   }
-
-  html[dir="rtl"] .toolbarButton#sidebarToggle::before {
+  html[dir='rtl'] .toolbarButton#sidebarToggle::before {
     content: url(images/toolbarButton-sidebarToggle-rtl@2x.png);
   }
 
-  html[dir="ltr"] .toolbarButton#secondaryToolbarToggle::before {
+  html[dir='ltr'] .toolbarButton#secondaryToolbarToggle::before {
     content: url(images/toolbarButton-secondaryToolbarToggle@2x.png);
   }
-
-  html[dir="rtl"] .toolbarButton#secondaryToolbarToggle::before {
+  html[dir='rtl'] .toolbarButton#secondaryToolbarToggle::before {
     content: url(images/toolbarButton-secondaryToolbarToggle-rtl@2x.png);
   }
 
-  html[dir="ltr"] .toolbarButton.findPrevious::before {
+  html[dir='ltr'] .toolbarButton.findPrevious::before {
     content: url(images/findbarButton-previous@2x.png);
   }
-
-  html[dir="rtl"] .toolbarButton.findPrevious::before {
+  html[dir='rtl'] .toolbarButton.findPrevious::before {
     content: url(images/findbarButton-previous-rtl@2x.png);
   }
 
-  html[dir="ltr"] .toolbarButton.findNext::before {
+  html[dir='ltr'] .toolbarButton.findNext::before {
     content: url(images/findbarButton-next@2x.png);
   }
-
-  html[dir="rtl"] .toolbarButton.findNext::before {
+  html[dir='rtl'] .toolbarButton.findNext::before {
     content: url(images/findbarButton-next-rtl@2x.png);
   }
 
-  html[dir="ltr"] .toolbarButton.pageUp::before {
+  html[dir='ltr'] .toolbarButton.pageUp::before {
     content: url(images/toolbarButton-pageUp@2x.png);
   }
-
-  html[dir="rtl"] .toolbarButton.pageUp::before {
+  html[dir='rtl'] .toolbarButton.pageUp::before {
     content: url(images/toolbarButton-pageUp-rtl@2x.png);
   }
 
-  html[dir="ltr"] .toolbarButton.pageDown::before {
+  html[dir='ltr'] .toolbarButton.pageDown::before {
     content: url(images/toolbarButton-pageDown@2x.png);
   }
-
-  html[dir="rtl"] .toolbarButton.pageDown::before {
+  html[dir='rtl'] .toolbarButton.pageDown::before {
     content: url(images/toolbarButton-pageDown-rtl@2x.png);
   }
 
@@ -1894,7 +1778,6 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
   html[dir="ltr"] #viewOutline.toolbarButton::before {
     content: url(images/toolbarButton-viewOutline@2x.png);
   }
-
   html[dir="rtl"] #viewOutline.toolbarButton::before {
     content: url(images/toolbarButton-viewOutline-rtl@2x.png);
   }
@@ -1942,24 +1825,23 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
   #sidebarContainer, #secondaryToolbar, .toolbar, #loadingBox, #errorWrapper, .textLayer {
     display: none;
   }
-
   #viewerContainer {
     overflow: visible;
   }
 
   #mainContainer, #viewerContainer, .page, .page canvas {
     position: static;
-    margin: 0;
     padding: 0;
+    margin: 0;
   }
 
   .page {
-    display: none;
     float: left;
+    display: none;
     border: none;
-    background-color: white;
-    background-clip: content-box;
     box-shadow: none;
+    background-clip: content-box;
+    background-color: white;
   }
 
   .page[data-loaded] {
@@ -1974,11 +1856,9 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
   body[data-mozPrintCallback] #outerContainer {
     display: none;
   }
-
   body[data-mozPrintCallback] #printContainer {
     display: block;
   }
-
   #printContainer canvas {
     position: relative;
     top: 0;
@@ -1994,16 +1874,15 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
 }
 
 @media all and (max-width: 960px) {
-  html[dir="ltr"] #outerContainer.sidebarMoving .outerCenter,
-  html[dir="ltr"] #outerContainer.sidebarOpen .outerCenter {
-    left: 205px;
+  html[dir='ltr'] #outerContainer.sidebarMoving .outerCenter,
+  html[dir='ltr'] #outerContainer.sidebarOpen .outerCenter {
     float: left;
+    left: 205px;
   }
-
-  html[dir="rtl"] #outerContainer.sidebarMoving .outerCenter,
-  html[dir="rtl"] #outerContainer.sidebarOpen .outerCenter {
-    right: 205px;
+  html[dir='rtl'] #outerContainer.sidebarMoving .outerCenter,
+  html[dir='rtl'] #outerContainer.sidebarOpen .outerCenter {
     float: right;
+    right: 205px;
   }
 }
 
@@ -2011,7 +1890,6 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
   .sidebarOpen .hiddenLargeView {
     display: none;
   }
-
   .sidebarOpen .visibleLargeView {
     display: inherit;
   }
@@ -2021,7 +1899,6 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
   .sidebarOpen .hiddenMediumView {
     display: none;
   }
-
   .sidebarOpen .visibleMediumView {
     display: inherit;
   }
@@ -2029,42 +1906,37 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
 
 @media all and (max-width: 770px) {
   #sidebarContainer {
-    z-index: 100;
     top: 32px;
+    z-index: 100;
   }
-
   .loadingInProgress #sidebarContainer {
     top: 37px;
   }
-
   #sidebarContent {
     top: 32px;
-    background-color: hsla(0, 0%, 0%, .7);
+    background-color: hsla(0,0%,0%,.7);
   }
 
-  html[dir="ltr"] #outerContainer.sidebarOpen > #mainContainer {
+  html[dir='ltr'] #outerContainer.sidebarOpen > #mainContainer {
     left: 0px;
   }
-
-  html[dir="rtl"] #outerContainer.sidebarOpen > #mainContainer {
+  html[dir='rtl'] #outerContainer.sidebarOpen > #mainContainer {
     right: 0px;
   }
 
-  html[dir="ltr"] .outerCenter {
-    left: 205px;
+  html[dir='ltr'] .outerCenter {
     float: left;
+    left: 205px;
   }
-
-  html[dir="rtl"] .outerCenter {
-    right: 205px;
+  html[dir='rtl'] .outerCenter {
     float: right;
+    right: 205px;
   }
 
   #outerContainer .hiddenLargeView,
   #outerContainer .hiddenMediumView {
     display: inherit;
   }
-
   #outerContainer .visibleLargeView,
   #outerContainer .visibleMediumView {
     display: none;
@@ -2075,7 +1947,6 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
   #outerContainer .hiddenLargeView {
     display: none;
   }
-
   #outerContainer .visibleLargeView {
     display: inherit;
   }
@@ -2085,7 +1956,6 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
   #outerContainer .hiddenMediumView {
     display: none;
   }
-
   #outerContainer .visibleMediumView {
     display: inherit;
   }
@@ -2095,23 +1965,19 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
   .hiddenSmallView {
     display: none;
   }
-
   .visibleSmallView {
     display: inherit;
   }
-
-  html[dir="ltr"] #outerContainer.sidebarMoving .outerCenter,
-  html[dir="ltr"] #outerContainer.sidebarOpen .outerCenter,
-  html[dir="ltr"] .outerCenter {
+  html[dir='ltr'] #outerContainer.sidebarMoving .outerCenter,
+  html[dir='ltr'] #outerContainer.sidebarOpen .outerCenter,
+  html[dir='ltr'] .outerCenter {
     left: 156px;
   }
-
-  html[dir="rtl"] #outerContainer.sidebarMoving .outerCenter,
-  html[dir="rtl"] #outerContainer.sidebarOpen .outerCenter,
-  html[dir="rtl"] .outerCenter {
+  html[dir='rtl'] #outerContainer.sidebarMoving .outerCenter,
+  html[dir='rtl'] #outerContainer.sidebarOpen .outerCenter,
+  html[dir='rtl'] .outerCenter {
     right: 156px;
   }
-
   .toolbarButtonSpacer {
     width: 0;
   }

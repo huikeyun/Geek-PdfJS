@@ -19,14 +19,14 @@
 
 // Initializing PDFJS global object (if still undefined)
 if (typeof PDFJS === 'undefined') {
-    (typeof window !== 'undefined' ? window : this).PDFJS = {};
+  (typeof window !== 'undefined' ? window : this).PDFJS = {};
 }
 
 (function pdfViewerWrapper() {
-    'use strict';
+  'use strict';
 
 //#include ui_utils.js
 //#include pdf_viewer.js
 
-    PDFJS.PDFViewer = PDFViewer;
+  PDFJS.PDFViewer = PDFViewer;
 }).call((typeof window === 'undefined') ? this : window);
